@@ -1,0 +1,29 @@
+<html>
+	<head> 
+		<title> Contact List </title> 
+	</head>
+	<body>
+		{% if all_contacts %}
+			<table style="width:80%">
+			{% for c in all_contacts%}
+				<tr> 
+					<td> {{ c.full_name }} </td>
+					<td> {{ c.phone }} </td>
+					<td> {{ c.email }} </td>
+					<td> <a href="/edit_contact/{{c.id}}" > Edit </a>
+					<td> <a href="/delete_contact/{{c.id}}" > Delete </a>
+					<!--td> <input type="button" onclick="delete_contact/" value="Delete Contact"></td-->					
+				</tr>
+			{% endfor %}
+			</table>
+		{% endif %}
+		<table>
+			<tr>
+				<td>
+				<a href="/contact_form"> Add Contact </a>
+				<!--input type="button" onclick="/add_contact/" value="Add Contact"-->
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
